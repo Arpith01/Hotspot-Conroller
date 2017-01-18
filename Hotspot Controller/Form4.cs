@@ -24,7 +24,7 @@ namespace Hotspot_Controller
         private void Form4_Load(object sender, EventArgs e)
         {
             f1.ShowNetwork();
-            string ssid = Form1.ReadSetting("ssid");
+            string ssid = Form1.GetSSID();
             string password = Form1.ReadSetting("password");
             string ADN = Form1.ReadSetting("activedatanetwork");
             string HDN = Form1.ReadSetting("activehostnetwork");

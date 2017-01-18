@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,8 +58,19 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(540, 30);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 15;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.element_MouseDown);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.ForeColor = System.Drawing.SystemColors.Window;
+            this.label16.Location = new System.Drawing.Point(243, 4);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(52, 21);
+            this.label16.TabIndex = 2;
+            this.label16.Text = "Status";
+            this.label16.MouseDown += new System.Windows.Forms.MouseEventHandler(this.element_MouseDown);
             // 
             // button1
             // 
@@ -72,7 +83,7 @@
             this.button1.Location = new System.Drawing.Point(510, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(30, 30);
-            this.button1.TabIndex = 1;
+            this.button1.TabIndex = 0;
             this.button1.Text = "x";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -216,17 +227,6 @@
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(0, 21);
             this.label15.TabIndex = 16;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.ForeColor = System.Drawing.SystemColors.Window;
-            this.label16.Location = new System.Drawing.Point(243, 4);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(52, 21);
-            this.label16.TabIndex = 2;
-            this.label16.Text = "Status";
-            this.label16.MouseDown += new System.Windows.Forms.MouseEventHandler(this.element_MouseDown);
             // 
             // Form4
             // 

@@ -25,13 +25,8 @@ namespace Hotspot_Controller
             //int y = stat.ToLower().LastIndexOf("status");
             //int z = stat.IndexOf('\n', y);
             //label1.Text = "Status : " + y + "  " + z + stat.LastIndexOf("\n");
-            /*if (!checkWifiStat())
-            {
-                MessageBox.Show("Please turn on your Wi-Fi!","Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
-                this.Close();
-            }*/
             InitializeComponent();
-
+            
             //this.Update();
             //System.Threading.Thread.Sleep(1000);
 
@@ -142,6 +137,38 @@ namespace Hotspot_Controller
             //Console.WriteLine(status.Substring(startOfStatusIndex, endOfStatusIndex - startOfStatusIndex).Replace(" ", ""));
             return statusstring.Substring(startOfStatusIndex, endOfStatusIndex - startOfStatusIndex).Replace("        ", "");
         }
+        public static string GetSSID()
+        {
+            string ssid = null;
+            ProcessStartInfo psi = new ProcessStartInfo("C:\\Windows\\System32\\netsh.exe");
+            psi.CreateNoWindow = true;
+            psi.UseShellExecute = false;
+            psi.RedirectStandardOutput = true;
+            psi.RedirectStandardError = true;
+            psi.Arguments = "wlan show hostednetwork";
+            psi.Verb = "runas";
+            var netshpr = Process.Start(psi);
+            string outString = netshpr.StandardOutput.ReadToEnd();
+            string[] outstringarray = outString.Split('\n');
+            for(int i = 0 ; i < outstringarray.Length;i++)
+            {
+                outstringarray[i] = outstringarray[i].Trim();
+                if(outstringarray[i].ToLower().Contains("ssid"))
+                {
+                    outstringarray[i].Replace(" ",string.Empty);
+                    int indexofhypen = outstringarray[i].IndexOf(':');
+                    ssid = outstringarray[i].Substring(indexofhypen + 1);
+                    break;
+                }
+            }
+            if (ssid == null)
+            {
+                ssid = "null";
+                MessageBox.Show("Create network first!","Not found",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
+            return ssid;
+
+        }
         public void StartHstNet()
         {
             ProcessStartInfo psi = new ProcessStartInfo("C:\\Windows\\System32\\netsh.exe");
@@ -156,6 +183,10 @@ namespace Hotspot_Controller
             textBox1.AppendText(netshpr.StandardOutput.ReadToEnd() + Environment.NewLine);
             netshpr.WaitForExit();
             label1.Text = ShowNetwork();
+            if (label1.Text.ToLower().Contains("not"))
+            {
+                MessageBox.Show("Trouble starting hostednetwork. Please check if wifi is turned-off", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         public void StopHstNet()
         {
@@ -269,9 +300,10 @@ namespace Hotspot_Controller
         }*/
         public void CreateHost(string ssid = "Sample!", string key = "1234567890")
         {
-            createNew.textBox1.Text = ssid;
-            createNew.textBox2.Text = key;
-            createNew.textBox3.Text = key;
+            Console.WriteLine(ssid.ToString());
+            //createNew.textBox1.Text = ssid;
+            //createNew.textBox2.Text = key;
+            //createNew.textBox3.Text = key;
             ProcessStartInfo psi = new ProcessStartInfo("C:\\Windows\\System32\\netsh.exe");
             psi.Arguments = String.Format("wlan set hostednetwork mode = allow ssid = \"{0}\" key =\"{1}\" ", ssid, key);
             psi.CreateNoWindow = true;

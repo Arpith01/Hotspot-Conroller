@@ -36,6 +36,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
@@ -44,9 +47,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -126,6 +126,51 @@
             this.panel1.Size = new System.Drawing.Size(200, 480);
             this.panel1.TabIndex = 12;
             // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label6.Location = new System.Drawing.Point(0, 100);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(200, 50);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Status";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label6.Click += new System.EventHandler(this.button8_Click);
+            this.label6.MouseEnter += new System.EventHandler(this.label6_MouseEnter);
+            this.label6.MouseLeave += new System.EventHandler(this.label6_MouseLeave);
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label5.Location = new System.Drawing.Point(0, 50);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(200, 50);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Share data network";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label5.Click += new System.EventHandler(this.button5_Click);
+            this.label5.MouseEnter += new System.EventHandler(this.label5_MouseEnter);
+            this.label5.MouseLeave += new System.EventHandler(this.label5_MouseLeave);
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.Black;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label4.Location = new System.Drawing.Point(-2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(202, 50);
+            this.label4.TabIndex = 3;
+            this.label4.Text = " Create new network";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label4.Click += new System.EventHandler(this.button7_Click);
+            this.label4.MouseEnter += new System.EventHandler(this.label4_MouseEnter);
+            this.label4.MouseLeave += new System.EventHandler(this.label4_MouseLeave);
+            // 
             // button6
             // 
             this.button6.AutoSize = true;
@@ -146,9 +191,9 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.textBox2);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(227, 61);
+            this.panel2.Location = new System.Drawing.Point(200, 33);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(570, 318);
+            this.panel2.Size = new System.Drawing.Size(635, 446);
             this.panel2.TabIndex = 14;
             this.panel2.Visible = false;
             // 
@@ -207,51 +252,6 @@
             this.label2.Size = new System.Drawing.Size(112, 21);
             this.label2.TabIndex = 0;
             this.label2.Text = "New Password";
-            // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.Color.Black;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(-2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(202, 50);
-            this.label4.TabIndex = 3;
-            this.label4.Text = " Create new network";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label4.Click += new System.EventHandler(this.button7_Click);
-            this.label4.MouseEnter += new System.EventHandler(this.label4_MouseEnter);
-            this.label4.MouseLeave += new System.EventHandler(this.label4_MouseLeave);
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(0, 50);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(200, 50);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Share data network";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label5.Click += new System.EventHandler(this.button5_Click);
-            this.label5.MouseEnter += new System.EventHandler(this.label5_MouseEnter);
-            this.label5.MouseLeave += new System.EventHandler(this.label5_MouseLeave);
-            // 
-            // label6
-            // 
-            this.label6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label6.Location = new System.Drawing.Point(2, 100);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(198, 50);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Status";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label6.Click += new System.EventHandler(this.button8_Click);
-            this.label6.MouseEnter += new System.EventHandler(this.label6_MouseEnter);
-            this.label6.MouseLeave += new System.EventHandler(this.label6_MouseLeave);
             // 
             // Form1
             // 
