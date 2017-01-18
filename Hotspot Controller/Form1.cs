@@ -443,7 +443,14 @@ namespace Hotspot_Controller
             {
                 if (textBox2.TextLength > 8 && textBox3.TextLength > 8)
                 {
-                    string ssid = ReadSetting("ssid");
+
+                    string ssid = GetSSID();
+                    Console.WriteLine(ssid);
+                    if (ssid == "null")
+                    {
+                        return;
+                    }
+                    AddUpdateAppSettings("ssid", ssid);
                     string password = textBox2.Text;
                     StopHstNet();
                     CreateHost(ssid, password);
