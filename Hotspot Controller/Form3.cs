@@ -25,7 +25,8 @@ namespace Hotspot_Controller
         }
         private void Form3_Load(object sender, EventArgs e)
         {
-
+            panel1.BackColor = Form1.backColor;
+            panel1.ForeColor = Form1.foreColor;
             NetSharingManager ns = new NetSharingManager();
             //Console.WriteLine(ns.ToString());
 

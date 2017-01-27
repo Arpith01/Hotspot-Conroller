@@ -117,29 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1485461213_messagebox_critical" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1485461213_messagebox_critical1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="close_img" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\close_img.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1485461253_messagebox_critical" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1485461253_messagebox_critical1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="hsvvb" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hsvvb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="64x64_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\64x64_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1485461303_messagebox_info" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1485461303_messagebox_info1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="wifi-signal-waves" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\wifi-signal-waves.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

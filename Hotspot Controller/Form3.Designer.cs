@@ -39,9 +39,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -173,6 +173,18 @@
             this.panel1.TabIndex = 11;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.element_MouseDown);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.Window;
+            this.label5.Location = new System.Drawing.Point(188, 4);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(176, 21);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Share Data Connection";
+            this.label5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.element_MouseDown);
+            // 
             // button2
             // 
             this.button2.FlatAppearance.BorderSize = 0;
@@ -199,18 +211,6 @@
             this.button3.Text = "Change IP(optional)";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.Window;
-            this.label5.Location = new System.Drawing.Point(188, 4);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(176, 21);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Share Data Connection";
-            this.label5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.element_MouseDown);
             // 
             // Form3
             // 

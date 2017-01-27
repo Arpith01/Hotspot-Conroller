@@ -23,6 +23,8 @@ namespace Hotspot_Controller
         }
         private void Form4_Load(object sender, EventArgs e)
         {
+            panel1.BackColor = Form1.backColor;
+            panel1.ForeColor = Form1.foreColor;
             f1.ShowNetwork();
             string ssid = Form1.GetSSID();
             string password = Form1.ReadSetting("password");

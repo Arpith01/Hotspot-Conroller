@@ -24,9 +24,23 @@ namespace Hotspot_Controller
             InitializeComponent();
         }
 
+        /*
+        private const int CS_DROPSHADOW = 0x20000;
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ClassStyle |= CS_DROPSHADOW;
+                return cp;
+            }
+        }
+        */
         private void Form2_Load(object sender, EventArgs e)
         {
-
+            //Form1.color = Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(255)))), ((int)(((byte)(153)))));
+            panel1.BackColor = Form1.backColor;
+            panel1.ForeColor = Form1.foreColor;
         }
 
 

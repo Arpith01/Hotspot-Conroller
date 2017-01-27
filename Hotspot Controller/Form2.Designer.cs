@@ -35,10 +35,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,6 +107,19 @@
             this.panel1.TabIndex = 6;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.element_MouseDown);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.Window;
+            this.label4.Location = new System.Drawing.Point(220, 4);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(107, 21);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "New network";
+            this.label4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.element_MouseDown);
+            // 
             // button1
             // 
             this.button1.FlatAppearance.BorderSize = 0;
@@ -145,19 +158,6 @@
             this.button3.Text = "Create";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(220, 4);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 21);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "New network";
-            this.label4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.element_MouseDown);
             // 
             // Form2
             // 

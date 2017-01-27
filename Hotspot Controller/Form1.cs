@@ -32,6 +32,8 @@ namespace Hotspot_Controller
 
 
         }
+        public static Color backColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+        public static Color foreColor = System.Drawing.Color.FromArgb(255, 255, 255);
         private bool checkWifiStat()
         {
             ProcessStartInfo psi = new ProcessStartInfo("C:\\Windows\\System32\\netsh.exe");
@@ -86,16 +88,19 @@ namespace Hotspot_Controller
         private void button1_Click(object sender, EventArgs e)
         {
             StartHstNet();
+            MessageBoxForm m = new MessageBoxForm("Hosted Network started", "Response", 3, this, "info",foreColor,backColor);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             StopHstNet();
+            MessageBoxForm m = new MessageBoxForm("Hosted Network stopped", "Response", 3, this, "info",foreColor,backColor);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             restart();
+            MessageBoxForm m = new MessageBoxForm("Hosted Network restarted", "Response", 5, this, "info",foreColor,backColor);
         }
         public void restart()
         {
@@ -218,6 +223,13 @@ namespace Hotspot_Controller
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            backColor = parseColorFromString(Form1.ReadSetting("backColor"));
+            //MessageBox.Show(color.ToString());
+            panel1.BackColor = backColor;
+            panel4.BackColor = backColor;
+            foreColor = parseColorFromString(ReadSetting("foreColor"));
+            panel1.ForeColor = foreColor;
+            panel4.ForeColor = foreColor;
             if (!validateCompat())
             {
                 //Console.WriteLine("ASFAFASf");
@@ -400,7 +412,7 @@ namespace Hotspot_Controller
             }
             catch (ConfigurationErrorsException)
             {
-                MessageBox.Show("Error writing app settings");
+                MessageBox.Show("Error occured while updating app settings");
             }
         }
         public static string ReadSetting(string key)
@@ -458,6 +470,7 @@ namespace Hotspot_Controller
                     textBox3.PasswordChar = '\0';
                     this.panel2.SendToBack();
                     this.panel2.Hide();
+                    MessageBoxForm m = new MessageBoxForm("Password updated", "Response", 5, this, "info",foreColor,backColor);
                 }
                 else
                 {
@@ -479,35 +492,128 @@ namespace Hotspot_Controller
 
         private void label4_MouseEnter(object sender, EventArgs e)
         {
-            label4.BackColor = System.Drawing.Color.FromArgb(32,32,32);
+            label4.BackColor = System.Drawing.Color.FromArgb(120,120,120);
         }
 
         private void label4_MouseLeave(object sender, EventArgs e)
         {
-            label4.BackColor = System.Drawing.Color.Black;
+            label4.BackColor = backColor;
         }
 
         private void label5_MouseEnter(object sender, EventArgs e)
         {
-            label5.BackColor = System.Drawing.Color.FromArgb(32, 32, 32);
+            label5.BackColor = System.Drawing.Color.FromArgb(120,120,120);
         }
 
         private void label6_MouseEnter(object sender, EventArgs e)
         {
-            label6.BackColor = System.Drawing.Color.FromArgb(32, 32, 32);
+            label6.BackColor = System.Drawing.Color.FromArgb(120,120,120);
         }
 
         private void label6_MouseLeave(object sender, EventArgs e)
         {
-            label6.BackColor = System.Drawing.Color.Black;
+            label6.BackColor = backColor;
         }
 
         private void label5_MouseLeave(object sender, EventArgs e)
         {
-            label5.BackColor = System.Drawing.Color.Black;
+            label5.BackColor = backColor;
         }
 
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            MessageBoxForm m = new MessageBoxForm("Wha","Information",5,this,"warning",foreColor,backColor);
+            m.Show(this);
+        }
 
+        private void button5_Click_2(object sender, EventArgs e)
+        {
+            colorDialog1.ShowDialog();
+            Form1.backColor = colorDialog1.Color;
+            AddUpdateAppSettings("backColor", backColor.R.ToString()+" "+backColor.G.ToString()+" "+backColor.B.ToString());
+            int colorSum = backColor.R + backColor.G + backColor.B;
+            foreColor = colorSum > 383 ? Color.Black : Color.White;
+            AddUpdateAppSettings("foreColor", foreColor.R.ToString() + " " + foreColor.G.ToString() + " " + foreColor.B.ToString());
+            MessageBox.Show("Changes appear in the next restart" + backColor.ToString());
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            panel1.BackColor = backColor;
+        }
+
+        public Color parseColorFromString(string colorString)
+        {
+            int r, g, b;
+            string[] colors = colorString.Split();
+            r = Convert.ToInt32(colors[0]);
+            g = Convert.ToInt32(colors[1]);
+            b = Convert.ToInt32(colors[2]);
+            Color c = System.Drawing.Color.FromArgb(r, g, b);
+            return c;
+        }
+
+        private void button8_Click_1(object sender, EventArgs e)
+        {
+            panel3.SendToBack();
+            panel3.Hide();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            panel3.BringToFront();
+            panel3.Show();
+        }
+        private Boolean clickedColor = false;
+        private Color bc, fc;
+        private void button11_Click(object sender, EventArgs e)
+        {
+            clickedColor = true;
+            bc = (sender as Button).BackColor;
+            //MessageBox.Show(c.R.ToString() + " " + c.G.ToString() + " " + c.B.ToString());
+            fc = bc.R+bc.G+bc.B > 383 ? Color.Black : Color.White;
+            //panel1.BackColor = c;
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            if(clickedColor)
+            {
+                AddUpdateAppSettings("backColor", bc.R.ToString() + " " + bc.G.ToString() + " " + bc.B.ToString());
+                AddUpdateAppSettings("foreColor", fc.R.ToString() + " " + fc.G.ToString() + " " + fc.B.ToString());
+                MessageBoxForm m = new MessageBoxForm("Changes reflect from the next restart :)", "Notice", 5, this, "warning", foreColor, backColor);
+            }
+            panel3.SendToBack();
+            panel3.Hide();
+        }
+
+        private void button5_Click_3(object sender, EventArgs e)
+        {
+            this.Dispose();
+            Application.Exit();
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        private void element_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
 
     }
 }
