@@ -92,7 +92,9 @@ namespace Hotspot_Controller
                     {
                         f1.Enabled = true;
                         //f1.button5.PerformClick();
+                        MessageBoxForm m = new MessageBoxForm("Network created", "Respone", 4, this, "info", Form1.foreColor, Form1.backColor);
                         button1.PerformClick();
+                       
 
                     }
                 }
@@ -115,8 +117,10 @@ namespace Hotspot_Controller
                         else
                         {
                             f1.Enabled = true;
+                            MessageBoxForm m = new MessageBoxForm("Network created", "Respone", 4, this, "info", Form1.foreColor, Form1.backColor);
                             //f1.button5.PerformClick();
                             button1.PerformClick();
+
                         }
                     }
                 }

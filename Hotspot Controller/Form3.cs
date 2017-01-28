@@ -126,6 +126,7 @@ namespace Hotspot_Controller
             }
             this.Update();
             System.Threading.Thread.Sleep(500);
+            MessageBoxForm m = new MessageBoxForm("Network sharing completed", "Respone", 4, this, "info", Form1.foreColor, Form1.backColor);
             button2.PerformClick();
         }
         int changeip = 0;
@@ -178,6 +179,7 @@ namespace Hotspot_Controller
 
         private void button3_Click(object sender, EventArgs e)
         {
+            MessageBoxForm m = new MessageBoxForm("Change IP at your own risk", "Warning", 4, this, "warning", Form1.foreColor, Form1.backColor);
             changeip++;
             button3.Hide();
             textBox1.Show();
